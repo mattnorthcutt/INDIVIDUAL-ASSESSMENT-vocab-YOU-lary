@@ -6,20 +6,22 @@ const addVocabForm = (obj = {}) => {
   const domString = `
     <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
       <div class="form-group">
-        <label for="title">Vocab Name</label>
-        <input type="text" class="form-control" id="title" aria-describedby="vocabTitle" placeholder="Enter Vocab Name" value="${obj.name || ''}" required>
+        <label style="color: black;" for="title">Vocab Name</label>
+        <input type="text" style="width: 400px; margin-left: 380px;" class="form-control" id="name" aria-describedby="vocabName" placeholder="Enter Vocab Name" value="${obj.name || ''}" required>
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" placeholder="Vocab Description" id="description" style="height: 100px">${obj.desc || ''}</textarea>
+        <label style="color: black;" for="desc">Description</label>
+        <textarea class="form-control" placeholder="Enter Vocab Description" id="desc" style="height: 100px">${obj.desc || ''}</textarea>
       </div>
       <div class="form-group">
-        <label for="Category">Price</label>
-        <input type="text" class="form-control" id="category" placeholder="Category" value="${obj.category || ''}" required>
+        <label for="Category"></label>
+        <select id="category" style="width: 200px; text-align: center;" class="mt-2" name="cate" required>
+          <option value="select">Select a Category</option>
+          <option value="Tech">Tech</option>
+          <option value="Language">Language</option>
+        </select>
       </div>
-      <div class="form-group" id="select-category">
-      </div>
-      <button type="submit" class="btn btn-primary">Submit Vocab Card
+      <button class="mt-2" type="submit" class="btn btn-primary">Submit Vocab Card
       </button>
     </form>`;
 
