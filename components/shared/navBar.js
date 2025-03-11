@@ -11,7 +11,7 @@ const navBar = () => {
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#" id="All Vocab">
+              <a class="nav-link" href="#" id="all-vocab">
                 All Vocab <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -20,6 +20,9 @@ const navBar = () => {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" id="language-vocab">Language Category</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#" id="add-button1">Add Entry</a>
             </li>
             <li>
             <input

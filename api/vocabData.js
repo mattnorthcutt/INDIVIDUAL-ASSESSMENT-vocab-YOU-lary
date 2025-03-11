@@ -24,7 +24,7 @@ const getVocab = (uid) => new Promise((resolve, reject) => {
 });
 
 const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/cards/${firebaseKey}.json`, {
+  fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -73,8 +73,13 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getVocabDetails = async (firebaseKey) => {
+  const vocabObject = await getSingleVocab(firebaseKey);
+  return { ...vocabObject };
+};
+
 const getTech = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}`, {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -89,7 +94,7 @@ const getTech = (uid) => new Promise((resolve, reject) => {
 });
 
 const getLanguage = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}`, {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -97,8 +102,8 @@ const getLanguage = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const categoryTech = Object.values(data).filter((item) => item.category === 'Language');
-      resolve(categoryTech);
+      const categoryLang = Object.values(data).filter((item) => item.category === 'Language');
+      resolve(categoryLang);
     })
     .catch(reject);
 });
@@ -109,6 +114,7 @@ export {
   getSingleVocab,
   createVocab,
   updateVocab,
+  getVocabDetails,
   getTech,
   getLanguage
 };
