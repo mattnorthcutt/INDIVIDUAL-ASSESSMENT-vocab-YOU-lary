@@ -10,21 +10,18 @@ const emptyVocab = () => {
 const showVocab = (array) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-vocab-btn">Add A Vocab Card</button>';
-  renderToDOM('#add-button', btnString);
-
   let domString = '';
   array.forEach((item) => {
     domString += `
       <div class="card">
-        <div class="card-body">
+        <div style="width: 100%; height: 100%;" class="card-body">
           <h4 class="card-title">${item.name}</h4>
             <h5 class="card-text">${item.category}</h5>
-            <p class="card-text2">${item.desc}</p>
+            <p style="min-height: 215px;" class="card-text2">${item.desc}</p>
             <h6 class="card-text3">${item.timeSubmit}</h6>
-            <i class="btn btn-success fas " id="view-vocab-btn--${item.firebaseKey}">View</i>
-            <i id="edit-vocab-btn--${item.firebaseKey}" class="fas btn btn-info">Edit</i>
-            <i id="delete-vocab-btn--${item.firebaseKey}" class="fas btn btn-danger ">Delete</i>
+            <a link style="color: skyblue;" class="btn fas" id="view-vocab-btn--${item.firebaseKey}">View</a>
+            <i style="color: green;" id="edit-vocab-btn--${item.firebaseKey}" class="fas btn">Edit</i>
+            <i style="color: red;" id="delete-vocab--${item.firebaseKey}" class="fas btn">Delete</i>
         </div>
       </div>`;
   });

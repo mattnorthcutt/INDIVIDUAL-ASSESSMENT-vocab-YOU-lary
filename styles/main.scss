@@ -3,7 +3,8 @@
 
 
 body {
-  background-color: antiquewhite;
+  background-image: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Y5OTYtMDI1LWpvYjU5OC5qcGc.jpg");
+  background-size: 100%;
   color: brown;
   text-align: center;
   margin-top: 100px;
@@ -29,6 +30,10 @@ body {
   margin: 0 20px;
   font-size: 25px;
   color: white;
+}
+
+#navbar{
+  background-color: transparent;
 }
 
 #main-container {
@@ -81,13 +86,44 @@ body {
 }
 
 #view {
+  display: flex;
+  justify-content: center;
   width: 90%;
   margin: auto;
 
+  .card{
+    width: 40%;
+    height: 550px;
+  }
+
+  .spec-img{
+    width: 100px;
+    height: 80px;
+    position: fixed; 
+    top: 0;
+    margin-top: 100px;
+  }
+
+  .view-card-title{
+    font-size: 50px;
+  }
+
+  .view-card-text{
+    font-size: 35px;
+  }
+
+  .view-card-text2{
+    font-size: 30px;
+
+  }
+
+  .view-card-text3{
+    font-size: 30px;
+  }
 
   .details {
-    min-width: 50%;
-    max-width: 60%;
+    min-width: 100%;
+    max-width: 100%;
   }
 
   .desc {
