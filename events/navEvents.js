@@ -1,5 +1,10 @@
 import { signOut } from '../utils/auth';
-import { getTech, getLanguage, getVocab } from '../api/vocabData';
+import {
+  getTech,
+  getLanguage,
+  getVocab,
+  searchVocab,
+} from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
 import addVocabForm from '../components/forms/addVocabForm';
 
@@ -21,6 +26,13 @@ const navEvents = (user) => {
 
   document.querySelector('#add-button1').addEventListener('click', () => {
     addVocabForm({}, user);
+  });
+
+  document.querySelector('#search').addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+      searchVocab(user);
+      document.querySelector('#search').value = '';
+    }
   });
 };
 

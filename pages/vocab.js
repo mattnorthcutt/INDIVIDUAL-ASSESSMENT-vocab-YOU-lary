@@ -15,7 +15,7 @@ const showVocab = (array) => {
     domString += `
       <div class="card">
         <div style="width: 100%; height: 100%;" class="card-body">
-          <h4 class="card-title">${item.name}</h4>
+          <h4 style="border-bottom: solid grey 1px; height: 35px;" class="card-title">${item.name}</h4>
             <h5 class="card-text">${item.category}</h5>
             <p style="min-height: 215px;" class="card-text2">${item.desc}</p>
             <h6 class="card-text3">${item.timeSubmit}</h6>

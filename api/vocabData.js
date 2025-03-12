@@ -1,4 +1,5 @@
 // import { showVocab } from '../pages/vocab';
+import { showVocab } from '../pages/vocab';
 import client from '../utils/client';
 
 const endpoint = client.databaseURL;
@@ -47,11 +48,19 @@ const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const searchVocab = (user) => {
+  const searchInput = document.querySelector('#search').value.toLowerCase();
+  getVocab(user.uid).then((items) => {
+    const oneVocab = items.filter((vocab) => vocab.name.toLowerCase().includes(searchInput));
+    showVocab(oneVocab);
+  });
+};
+
 const createVocab = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab.json`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'appliaction/json',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload),
   })
@@ -114,7 +123,8 @@ export {
   getSingleVocab,
   createVocab,
   updateVocab,
+  searchVocab,
   getVocabDetails,
   getTech,
-  getLanguage
+  getLanguage,
 };

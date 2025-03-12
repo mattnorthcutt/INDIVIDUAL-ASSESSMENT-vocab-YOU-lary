@@ -21,14 +21,17 @@ const navBar = () => {
             <li class="nav-item">
               <a class="nav-link" href="#" id="language-vocab">Language Category</a>
             </li>
-             <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="#" id="add-button1">Add Entry</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="community">Community</a>
+            </li>
             <li>
-            <input
-              class="form-control mr-sm-2"
-              id="search"
-              placeholder="Search Vocab Names"
+            <input 
+              class="form-control mr-sm-2" 
+              id="search" 
+              placeholder="Search Vocab Names" 
               aria-label="Search"
             />
             </li>
