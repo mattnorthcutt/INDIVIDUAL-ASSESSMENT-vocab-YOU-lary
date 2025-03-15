@@ -18,13 +18,11 @@ const domEvents = (user) => {
     // Click event for deleting a card
     if (e.target.id.includes('delete-vocab')) {
       // eslint-disable-next-line no-alert
-      if (window.confirm('Want to delete?')) {
-        const [, firebaseKey] = e.target.id.split('--');
+      const [, firebaseKey] = e.target.id.split('--');
 
-        deleteVocab(firebaseKey).then(() => {
-          getVocab(user.uid).then(showVocab);
-        });
-      }
+      deleteVocab(firebaseKey).then(() => {
+        getVocab(user.uid).then(showVocab);
+      });
     }
 
     if (e.target.id.includes('view-vocab-btn')) {
